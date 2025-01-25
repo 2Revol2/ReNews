@@ -3,6 +3,7 @@ import { newsStore } from "@/shared/lib/store/api/news-store/news-store";
 import { useEffect } from "react";
 import { NewsList } from "@/widget/NewsList";
 import s from "./Main.module.scss";
+import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
 
 export const Main = observer(() => {
   const { newsDate, getNewsAction } = newsStore;
@@ -15,7 +16,12 @@ export const Main = observer(() => {
   return (
     <div>
       <div className={s.wrapper}>
-        {NEWS.length > 0 && <NewsList news={NEWS} />}
+        {newsDate?.state === "pending" && <Skeleton count={18} />}
+
+        {newsDate?.state === "fulfilled" && NEWS.length > 0 && (
+          <NewsList news={NEWS} />
+        )}
+        
       </div>
     </div>
   );
