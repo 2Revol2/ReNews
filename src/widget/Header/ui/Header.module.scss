@@ -1,0 +1,16 @@
+.header {
+  width: 100%;
+  border-bottom: 1px solid gray;
+  padding: .75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  column-gap: .9375rem;
+}
+.title {
+  font-size: 2rem;
+}
+.date {
+  font-size: 1rem;
+}
