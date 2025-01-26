@@ -5,7 +5,7 @@ import { NewsList } from "@/widget/NewsList";
 import s from "./Main.module.scss";
 import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
 
-export const Main = observer(() => {
+const Main = observer(() => {
   const { latestNews, getLatestNewsAction } = newsStore;
 
   useEffect(() => {
@@ -30,3 +30,5 @@ export const Main = observer(() => {
     </main>
   );
 });
+
+export default Main

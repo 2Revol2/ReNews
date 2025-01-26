@@ -1,1 +1,3 @@
-export { News } from "./ui/News";
+import { NewsPageAsync } from "./ui/News.async";
+
+export { NewsPageAsync as News };

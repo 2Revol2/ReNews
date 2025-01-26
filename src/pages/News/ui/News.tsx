@@ -5,9 +5,11 @@ import { useEffect, useState } from "react";
 import { Pagination } from "@/shared/ui/Pagination/Pagination";
 import { observer } from "mobx-react-lite";
 import { Categories } from "@/shared/ui/Categories/Categories";
-export const News = observer(() => {
+ const News = observer(() => {
+
   const { newsData, categoriesData, getNewsAction, getCategoriesAction } =
     newsStore;
+
   const [currentCategory, setCurrentCategory] = useState<string>("All");
   const [currentPage, setCurrentPage] = useState<number>(1);
   const totalPage = 15;
@@ -56,3 +58,5 @@ export const News = observer(() => {
     </main>
   );
 });
+
+export default News

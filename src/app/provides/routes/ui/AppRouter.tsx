@@ -6,7 +6,7 @@ import { Route, Routes } from "react-router-dom";
 
 export const AppRouter = () => {
   return (
-    <Suspense>
+    <Suspense fallback="">
       <Routes>
         <Route path={Paths.MAIN} element={<Main />} />
         <Route path={Paths.NEWS} element={<News />} />
