@@ -31,4 +31,4 @@ const Main = observer(() => {
   );
 });
 
-export default Main
+export default Main;
