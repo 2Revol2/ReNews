@@ -1,5 +1,9 @@
-.wrapper {
-    display: flex;
-    justify-content: center;
-
+// плохое решения с margin-left, в будущем исправить
+.title {
+  h3 {
+    margin-left: 128px;
+    font-size: 1.875rem;
+    color: brown;
+    text-transform: uppercase;
+  }
 }
