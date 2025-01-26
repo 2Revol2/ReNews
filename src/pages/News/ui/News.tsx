@@ -29,11 +29,16 @@ export const News = observer(() => {
     getCategoriesAction();
   }, []);
 
+  const handleCategoryChange = (category: string) => {
+    setCurrentCategory(category);
+    setCurrentPage(1); 
+  };
+
   return (
     <main>
       <Categories
         categories={categories}
-        setCurrentCategory={setCurrentCategory}
+        handleCategoryChange={handleCategoryChange}
         currentCategory={currentCategory}
       />
       <div>

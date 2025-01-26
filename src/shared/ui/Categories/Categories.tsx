@@ -2,13 +2,13 @@ import s from "./Categories.module.scss";
 
 interface CategoriesProps {
   categories: string[];
-  setCurrentCategory: React.Dispatch<React.SetStateAction<string>>;
+  handleCategoryChange: (newCategory: string) => void;
   currentCategory: string;
 }
 
 export const Categories = ({
   categories,
-  setCurrentCategory,
+  handleCategoryChange,
   currentCategory,
 }: CategoriesProps) => {
   return (
@@ -17,7 +17,7 @@ export const Categories = ({
         {categories.map((category, index) => (
           <li key={index}>
             <button
-              onClick={() => setCurrentCategory(category)}
+              onClick={() => handleCategoryChange(category)}
               className={currentCategory === category ? s.active : s.category}
               disabled={currentCategory === category}
             >
