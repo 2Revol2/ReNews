@@ -8,9 +8,9 @@ class NewsStore {
   constructor() {
     makeAutoObservable(this);
   }
-  getNewsAction = async () => {
+  getNewsAction = async (page_number: number = 1, page_size: number = 18) => {
     try {
-      this.newsDate = fromPromise(getNews());
+      this.newsDate = fromPromise(getNews(page_number, page_size));
     } catch (error) {
       console.log(error);
     }
