@@ -1,0 +1,50 @@
+.categories {
+  padding: 0.3125rem 0;
+  overflow-x: auto;
+  margin-bottom: 0.625rem;
+}
+
+.list {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.category,
+.active {
+  padding: 0.3125rem;
+  border: none;
+  border-radius: 0.625rem;
+  background: inherit;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: .0625rem solid #f2f4f5;
+  background-color: #f2f4f5;
+}
+.category:hover {
+  background-color: #e7e7ff;
+  color: #6b4eff;
+}
+
+.active {
+  cursor: default;
+  background-color: #e7e7ff;
+  color: #6b4eff;
+}
+
+.categories::-webkit-scrollbar {
+  height: 0.5rem;
+}
+
+.categories::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 0.625rem;
+}
+
+.categories::-webkit-scrollbar-thumb {
+  background: #9c9c9c;
+  border-radius: 0.625rem;
+}
+
+.categories::-webkit-scrollbar-thumb:hover {
+  background: #7c7c7c;
+}
