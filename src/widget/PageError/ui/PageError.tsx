@@ -11,7 +11,7 @@ export const PageError = () => {
       </div>
 
       <button className={s.button} onClick={() => reloadPage()}>
-        Перезагрузить страницу
+        Reload the Page
       </button>
     </div>
   );

@@ -1,5 +1,5 @@
 import { Header } from "@/widget/Header";
-import { AppRouter } from "./provides/routes/ui/AppRouter";
+import { AppRouter } from "./provides/routes";
 
 export const App = () => {
   return (
