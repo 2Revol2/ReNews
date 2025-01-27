@@ -6,11 +6,12 @@ export const getLatestNews = async () =>
 export const getNews = async (
   page_number: number,
   page_size: number,
-  category: string | null
+  category: string | null,
+  keywords: string
 ) =>
   (
     await baseInstance.get("/search", {
-      params: { page_number, page_size, category },
+      params: { page_number, page_size, category, keywords },
     })
   ).data;
 

@@ -14,10 +14,11 @@ class NewsStore {
   getNewsAction = async (
     page_number: number = 1,
     page_size: number = 18,
-    category: string | null
+    category: string | null,
+    keywords: string
   ) => {
     try {
-      this.newsData = fromPromise(getNews(page_number, page_size, category));
+      this.newsData = fromPromise(getNews(page_number, page_size, category, keywords));
     } catch (error) {
       console.log(error);
     }
