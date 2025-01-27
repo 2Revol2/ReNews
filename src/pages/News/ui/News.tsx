@@ -5,8 +5,7 @@ import { useEffect, useState } from "react";
 import { Pagination } from "@/shared/ui/Pagination/Pagination";
 import { observer } from "mobx-react-lite";
 import { Categories } from "@/shared/ui/Categories/Categories";
- const News = observer(() => {
-
+const News = observer(() => {
   const { newsData, categoriesData, getNewsAction, getCategoriesAction } =
     newsStore;
 
@@ -33,9 +32,14 @@ import { Categories } from "@/shared/ui/Categories/Categories";
 
   const handleCategoryChange = (category: string) => {
     setCurrentCategory(category);
-    setCurrentPage(1); 
+    setCurrentPage(1);
   };
 
+  const handleNextPage = (nextPage: number) => {
+    setCurrentPage(nextPage);
+    window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
+  };
+  
   return (
     <main>
       <Categories
@@ -52,11 +56,11 @@ import { Categories } from "@/shared/ui/Categories/Categories";
 
       <Pagination
         totalPage={totalPage}
-        setCurrentPage={setCurrentPage}
+        setCurrentPage={handleNextPage}
         currentPage={currentPage}
       />
     </main>
   );
 });
 
-export default News
+export default News;

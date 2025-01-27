@@ -1,7 +1,7 @@
 import s from "./Pagination.module.scss";
 interface PaginationProps {
   totalPage: number;
-  setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
+  setCurrentPage: (nextPage: number) => void;
   currentPage: number;
 }
 
@@ -21,7 +21,7 @@ export const Pagination = ({
       setCurrentPage(currentPage - 1);
     }
   };
-
+  
   return (
     <div className={s.pagination}>
       <button
