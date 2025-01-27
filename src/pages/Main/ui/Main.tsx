@@ -17,9 +17,7 @@ const Main = observer(() => {
   return (
     <main>
       <div>
-        <div className={s.title}>
-          <h3>Latest News</h3>
-        </div>
+        <h3 className={s.title}>Latest News</h3>
 
         {latestNews?.state === "pending" && <Skeleton count={18} />}
 
