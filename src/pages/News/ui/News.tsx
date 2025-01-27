@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { Pagination } from "@/shared/ui/Pagination/Pagination";
 import { observer } from "mobx-react-lite";
 import { Categories } from "@/shared/ui/Categories/Categories";
+import { Input } from "@/shared/ui/Input/Input";
 const News = observer(() => {
   const { newsData, categoriesData, getNewsAction, getCategoriesAction } =
     newsStore;
@@ -39,7 +40,7 @@ const News = observer(() => {
     setCurrentPage(nextPage);
     window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
   };
-  
+
   return (
     <main>
       <Categories
@@ -47,6 +48,7 @@ const News = observer(() => {
         handleCategoryChange={handleCategoryChange}
         currentCategory={currentCategory}
       />
+      <Input />
       <div>
         {newsData?.state === "pending" && <Skeleton count={18} />}
         {newsData?.state === "fulfilled" && NEWS.length > 0 && (

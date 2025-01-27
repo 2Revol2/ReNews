@@ -1,6 +1,6 @@
-import { NewsItem } from "@/entities/NewsItem/ui/NewsItem";
+import { NewsItem } from "@/entities/News";
 import { News } from "@/shared/api/news/types";
-import s from './NewsList.module.scss'
+import s from "./NewsList.module.scss";
 interface NewsListProps {
   news: News[];
 }
