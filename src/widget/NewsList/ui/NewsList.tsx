@@ -1,8 +1,8 @@
 import { NewsItem } from "@/entities/News";
-import { News } from "@/shared/api/news/types";
+import { NewsType } from "@/shared/api/news/types";
 import s from "./NewsList.module.scss";
 interface NewsListProps {
-  news: News[];
+  news: NewsType[];
 }
 export const NewsList = ({ news }: NewsListProps) => {
   return (

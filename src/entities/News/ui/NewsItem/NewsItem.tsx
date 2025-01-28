@@ -1,9 +1,9 @@
-import { News } from "@/shared/api/news/types";
+import { NewsType } from "@/shared/api/news/types";
 import s from "./NewsItem.module.scss";
 import { Image } from "@/shared/ui/Image/Image";
 import { formatTimeAgo } from "@/shared/lib/date/formatTimeAgo";
 interface NewsProps {
-  news: News;
+  news: NewsType;
 }
 
 export const NewsItem = ({ news }: NewsProps) => {
