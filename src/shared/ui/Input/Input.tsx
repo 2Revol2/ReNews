@@ -1,15 +1,17 @@
+import { useMobile } from "@/shared/lib/hooks/useMobile";
 import s from "./Input.module.scss";
 interface InputProps {
   keyword: string;
   setKeyword: React.Dispatch<React.SetStateAction<string>>;
 }
 export const Input = ({ keyword, setKeyword }: InputProps) => {
+  const isMobile = useMobile(600);
   return (
-    <div className={s.wrapper}>
+    <div className={isMobile ? s.wrapperMobile : s.wrapper}>
       <input
         type="text"
         placeholder="Search..."
-        className={s.input}
+        className={isMobile ? s.inputModile : s.input}
         value={keyword}
         onChange={(e) => setKeyword(e.target.value)}
       />
