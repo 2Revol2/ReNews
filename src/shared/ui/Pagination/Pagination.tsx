@@ -1,27 +1,19 @@
 import s from "./Pagination.module.scss";
 interface PaginationProps {
   totalPage: number;
-  setCurrentPage: (nextPage: number) => void;
+  handleCurrentPage: (nextPage: number) => void;
+  handleNextPage: () => void;
+  handlePrevPage: () => void;
   currentPage: number;
 }
 
 export const Pagination = ({
   totalPage,
-  setCurrentPage,
+  handleCurrentPage,
+  handleNextPage,
+  handlePrevPage,
   currentPage,
 }: PaginationProps) => {
-  const handleNextPage = () => {
-    if (currentPage <= 15) {
-      setCurrentPage(currentPage + 1);
-    }
-  };
-
-  const handlePrevPage = () => {
-    if (currentPage > 1) {
-      setCurrentPage(currentPage - 1);
-    }
-  };
-  
   return (
     <div className={s.pagination}>
       <button
@@ -37,7 +29,7 @@ export const Pagination = ({
             <li key={index}>
               <button
                 disabled={currentPage === index + 1}
-                onClick={() => setCurrentPage(index + 1)}
+                onClick={() => handleCurrentPage(index + 1)}
                 className={s.button}
               >
                 {index + 1}

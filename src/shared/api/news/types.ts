@@ -2,7 +2,7 @@ interface Category {
   category: string;
 }
 
-export interface News {
+export interface NewsType {
   author: string;
   category: Category[];
   description: string;
