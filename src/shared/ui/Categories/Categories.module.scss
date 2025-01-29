@@ -17,18 +17,19 @@
   background: inherit;
   text-transform: uppercase;
   cursor: pointer;
-  border: .0625rem solid #f2f4f5;
-  background-color: #f2f4f5;
+  color: var(--text-color);
+  border: 0.0625rem solid var(--bg-color);
+  background-color: var(--bg-color);
 }
 .category:hover {
-  background-color: #e7e7ff;
-  color: #6b4eff;
+  background-color: var(--bg-hover-color);
+  color: var(--secondary-text-color);
 }
 
 .active {
   cursor: default;
-  background-color: #e7e7ff;
-  color: #6b4eff;
+  background-color: var(--bg-hover-color);
+  color: var(--secondary-text-color);
 }
 
 .categories::-webkit-scrollbar {
@@ -36,7 +37,7 @@
 }
 
 .categories::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--bg-color);
   border-radius: 0.625rem;
 }
 

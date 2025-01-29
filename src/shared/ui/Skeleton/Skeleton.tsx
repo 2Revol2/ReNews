@@ -17,6 +17,7 @@ export const Skeleton = ({ count }: SkeletonProps) => {
             viewBox="0 0 250 295"
             backgroundColor="#c9c9c9"
             foregroundColor="#bababa"
+            className={s.skeleton}
           >
             <rect x="-4" y="2" rx="0" ry="0" width="250" height="295" />
           </ContentLoader>
