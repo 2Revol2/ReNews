@@ -1,6 +1,5 @@
-interface Category {
-  category: string;
-}
+import { Category } from "../categories/types";
+
 
 export interface NewsType {
   author: string;

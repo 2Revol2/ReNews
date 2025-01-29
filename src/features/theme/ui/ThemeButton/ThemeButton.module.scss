@@ -1,0 +1,21 @@
+.theme {
+  font-size: 30px;
+  padding: 10px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.theme:hover {
+  background-color: var(--bg-hover-color);
+  transform: scale(1.1);
+}
+
+.theme:active {
+  transform: scale(0.95);
+}

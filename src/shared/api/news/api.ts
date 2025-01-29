@@ -15,5 +15,4 @@ export const getNews = async (
     })
   ).data;
 
-export const getCategories = async () =>
-  (await baseInstance.get("/available/categories")).data;
+

@@ -4,8 +4,8 @@ import { NewsList } from "@/widget/NewsList";
 import { useEffect, useState } from "react";
 import { Pagination } from "@/shared/ui/Pagination/Pagination";
 import { observer } from "mobx-react-lite";
-import { Categories } from "@/shared/ui/Categories/Categories";
-import { Input } from "@/shared/ui/Input/Input";
+import { Categories } from "@/features/category";
+import { Search } from "@/features/search";
 import { useDebounce } from "@/shared/lib/hooks/useDebounce";
 import { PAGE_SIZE, TOTAL_PAGE } from "@/shared/const/consts";
 import { NewsType } from "@/shared/api/news/types";
@@ -27,7 +27,7 @@ const News = observer(() => {
 
   const NEWS: NewsType[] =
     newsData?.state === "fulfilled" ? newsData.value.news : [];
-    
+
   const categories: string[] =
     categoriesData?.state === "fulfilled"
       ? ["All", ...categoriesData?.value.categories]
@@ -56,7 +56,7 @@ const News = observer(() => {
         currentCategory={currentCategory}
       />
 
-      <Input keyword={keywords} setKeyword={setKeywords} />
+      <Search keyword={keywords} setKeyword={setKeywords} />
       <div>
         {newsData?.state === "pending" && <Skeleton count={18} />}
         {newsData?.state === "fulfilled" && NEWS.length > 0 && (

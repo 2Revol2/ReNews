@@ -1,6 +1,7 @@
 import { makeAutoObservable } from "mobx";
 import { fromPromise, IPromiseBasedObservable } from "mobx-utils";
-import { getCategories, getNews } from "@/shared/api/news/api";
+import { getNews } from "@/shared/api/news/api";
+import { getCategories } from "@/shared/api/categories/api";
 import { getLatestNews } from "@/shared/api/news/api";
 class NewsStore {
   latestNews?: IPromiseBasedObservable<any>;

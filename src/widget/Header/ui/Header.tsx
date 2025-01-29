@@ -2,9 +2,8 @@ import { formatDate } from "@/shared/lib/date/formatDate";
 import s from "./Header.module.scss";
 import { Navbar } from "../components/Navbar/Navbar";
 import { useMobile } from "@/shared/lib/hooks/useMobile";
-import { LuSun } from "react-icons/lu";
-import { FaMoon } from "react-icons/fa";
 import { useTheme } from "@/app/provides/ThemeProvider";
+import { ThemeButton } from "@/features/theme";
 
 export const Header = () => {
   const { isDark, toggleTheme } = useTheme();
@@ -28,9 +27,7 @@ export const Header = () => {
             </>
           )}
 
-          <button className={s.theme} onClick={toggleTheme}>
-            {isDark ? <FaMoon /> : <LuSun />}
-          </button>
+          <ThemeButton isDark={isDark} toggleTheme={toggleTheme} />
         </div>
         <Navbar />
       </header>
