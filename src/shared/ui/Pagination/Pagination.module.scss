@@ -26,6 +26,7 @@
 .button:disabled,
 .arrow:disabled {
   cursor: default;
+  color: var(--banner-bg-color);
 }
 
 @media (max-width: 600px) {
