@@ -1,10 +1,12 @@
 import ContentLoader from "react-content-loader";
 import s from "./Skeleton.module.scss";
+import { useTheme } from "@/app/provides/ThemeProvider";
 
 interface SkeletonProps {
   count: number;
 }
 export const Skeleton = ({ count }: SkeletonProps) => {
+  const { isDark } = useTheme();
   return (
     <ul className={s.list}>
       {[...new Array(count)].map((_, index) => {
@@ -15,7 +17,7 @@ export const Skeleton = ({ count }: SkeletonProps) => {
             width={250}
             height={295}
             viewBox="0 0 250 295"
-            backgroundColor="#c9c9c9"
+            backgroundColor={isDark ? "#262b32" : "#c9c9c9"}
             foregroundColor="#bababa"
             className={s.skeleton}
           >
