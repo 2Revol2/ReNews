@@ -17,9 +17,9 @@ export const Skeleton = ({ count }: SkeletonProps) => {
             key={index}
             speed={2}
             width={isMobile ? "100%" : "250"}
-            height={isMobile ? "487" : "250"}
+            height={isMobile ? "421" : "250"}
             viewBox={`0 0 ${isMobile ? "100%" : "250"} ${
-              isMobile ? "487" : "250"
+              isMobile ? "421" : "250"
             }`}
             backgroundColor={isDark ? "#262b32" : "#c9c9c9"}
             foregroundColor="#bababa"
@@ -31,7 +31,7 @@ export const Skeleton = ({ count }: SkeletonProps) => {
               rx="0"
               ry="0"
               width={isMobile ? "100%" : "250"}
-              height={isMobile ? "487" : "250"}
+              height={isMobile ? "421" : "250"}
             />
           </ContentLoader>
         );
