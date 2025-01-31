@@ -15,8 +15,8 @@ export const NewsDetails = observer(() => {
     );
   }
   return (
-    <section className={s.news}>
+    <main className={s.news}>
       <CurrentNews news={currentNews} />
-    </section>
+    </main>
   );
 });
