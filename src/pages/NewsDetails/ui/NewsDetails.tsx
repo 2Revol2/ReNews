@@ -8,9 +8,9 @@ export const NewsDetails = observer(() => {
 
   if (!currentNews) {
     return (
-      <div>
-        <h2>Opps something went wrong</h2>
-        <Link to="/news">go to news page</Link>
+      <div className={s.problem}>
+        <h2>Oops! Something went wrong</h2>
+        <Link className={s.link} to="/news">go to news page</Link>
       </div>
     );
   }
