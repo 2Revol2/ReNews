@@ -2,7 +2,7 @@ import { newsStore } from "@/shared/lib/store/api/news-store/news-store";
 import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
 import { NewsList } from "@/widget/NewsList";
 import { useEffect, useState } from "react";
-import { Pagination } from "@/shared/ui/Pagination/Pagination";
+import { Pagination } from "@/widget/Pagination";
 import { observer } from "mobx-react-lite";
 import { Categories } from "@/features/category";
 import { Search } from "@/features/search";
