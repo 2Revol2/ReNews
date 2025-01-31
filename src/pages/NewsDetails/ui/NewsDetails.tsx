@@ -1,7 +1,6 @@
 import { newsStore } from "@/shared/lib/store/api/news-store/news-store";
 import { observer } from "mobx-react-lite";
 import s from "./NewsDetails.module.scss";
-import { Image } from "@/shared/ui/Image/Image";
 import { Link } from "react-router-dom";
 import { CurrentNews } from "@/entities/News";
 export const NewsDetails = observer(() => {
