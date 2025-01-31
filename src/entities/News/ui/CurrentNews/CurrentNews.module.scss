@@ -48,8 +48,11 @@
   .title {
     font-size: 1.5625rem;
   }
+  .time {
+    font-size: 1rem;
+  }
 }
-@media (max-width: 500px) {
+@media (max-width: 31.25rem) {
   .title {
     font-size: 1.25rem;
   }
@@ -58,11 +61,13 @@
   }
 }
 @media (max-width: 25rem) {
-    .time {
-        margin-bottom: .3125rem;
-    }
-    .info {
-        display: flex;
-        flex-direction: column;
-      }
+  .time {
+    margin-bottom: 0.3125rem;
+    font-size: 0.875rem;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+  }
 }
