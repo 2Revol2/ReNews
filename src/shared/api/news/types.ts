@@ -1,9 +1,8 @@
-import { Category } from "../categories/types";
 
 
 export interface NewsType {
   author: string;
-  category: Category[];
+  category: string[];
   description: string;
   id: string;
   image: string;

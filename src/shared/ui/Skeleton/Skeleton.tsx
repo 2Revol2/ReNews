@@ -9,6 +9,7 @@ interface SkeletonProps {
 export const Skeleton = ({ count }: SkeletonProps) => {
   const { isDark } = useTheme();
   const isMobile = useMobile(600);
+  const width = isMobile ? window.innerWidth : 250;
   return (
     <ul className={s.list}>
       {[...new Array(count)].map((_, index) => {
@@ -17,10 +18,8 @@ export const Skeleton = ({ count }: SkeletonProps) => {
             key={index}
             speed={2}
             width={isMobile ? "100%" : "250"}
-            height={isMobile ? "421" : "250"}
-            viewBox={`0 0 ${isMobile ? "100%" : "250"} ${
-              isMobile ? "421" : "250"
-            }`}
+            height={isMobile ? "300" : "250"}
+            viewBox={`0 0 ${width} ${isMobile ? "300" : "250"}`}
             backgroundColor={isDark ? "#262b32" : "#c9c9c9"}
             foregroundColor="#bababa"
             className={s.skeleton}
@@ -31,7 +30,7 @@ export const Skeleton = ({ count }: SkeletonProps) => {
               rx="0"
               ry="0"
               width={isMobile ? "100%" : "250"}
-              height={isMobile ? "421" : "250"}
+              height={isMobile ? "300" : "250"}
             />
           </ContentLoader>
         );

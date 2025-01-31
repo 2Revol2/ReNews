@@ -4,6 +4,7 @@ import { Navbar } from "../components/Navbar/Navbar";
 import { useMobile } from "@/shared/lib/hooks/useMobile";
 import { useTheme } from "@/app/provides/ThemeProvider";
 import { ThemeButton } from "@/features/theme";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   const { isDark, toggleTheme } = useTheme();
@@ -17,12 +18,16 @@ export const Header = () => {
         <div className={s.headerTop}>
           {isMobile ? (
             <div>
-              <h1 className={s.title}>ReNews</h1>
+              <Link to={"/news"}>
+                <h1 className={s.title}>ReNews</h1>{" "}
+              </Link>
               <p className={s.date}>{formatDate({ date })}</p>
             </div>
           ) : (
             <>
-              <h1 className={s.title}>ReNews</h1>
+              <Link to={"/news"}>
+                <h1 className={s.title}>ReNews</h1>{" "}
+              </Link>
               <p className={s.date}>{formatDate({ date })}</p>
             </>
           )}

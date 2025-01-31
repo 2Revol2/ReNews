@@ -10,9 +10,15 @@ import { useDebounce } from "@/shared/lib/hooks/useDebounce";
 import { PAGE_SIZE, TOTAL_PAGE } from "@/shared/const/consts";
 import { NewsType } from "@/shared/api/news/types";
 import { usePagination } from "@/shared/lib/hooks/usePagination";
+import { useNavigate } from "react-router-dom";
 const News = observer(() => {
-  const { newsData, categoriesData, getNewsAction, getCategoriesAction } =
-    newsStore;
+  const {
+    newsData,
+    categoriesData,
+    getNewsAction,
+    getCategoriesAction,
+    setCurrentNewsAction,
+  } = newsStore;
 
   const [currentCategory, setCurrentCategory] = useState<string>("All");
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -48,6 +54,13 @@ const News = observer(() => {
     setCurrentPage(1);
   };
 
+  // переход на страницу новости
+  const navigate = useNavigate();
+  const viewNewsDetails = (news: NewsType) => {
+    setCurrentNewsAction(news);
+    navigate(`/news/${news.id}`);
+  };
+
   return (
     <main>
       <Categories
@@ -60,7 +73,7 @@ const News = observer(() => {
       <div>
         {newsData?.state === "pending" && <Skeleton count={18} />}
         {newsData?.state === "fulfilled" && NEWS.length > 0 && (
-          <NewsList news={NEWS} />
+          <NewsList viewNewsDetails={viewNewsDetails} news={NEWS} />
         )}
       </div>
 

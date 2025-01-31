@@ -4,15 +4,23 @@ import { useEffect } from "react";
 import { NewsList } from "@/widget/NewsList";
 import s from "./Main.module.scss";
 import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
+import { useNavigate } from "react-router-dom";
+import { NewsType } from "@/shared/api/news/types";
 
 const Main = observer(() => {
-  const { latestNews, getLatestNewsAction } = newsStore;
+  const { latestNews, getLatestNewsAction, setLatestCurrentNews } = newsStore;
 
   useEffect(() => {
     getLatestNewsAction();
   }, []);
-
   const NEWS = latestNews?.state === "fulfilled" ? latestNews.value.news : [];
+
+  // переход на страницу новости
+  const navigate = useNavigate();
+  const viewNewsDetails = (news: NewsType) => {
+    setLatestCurrentNews(news);
+    navigate(`/latest-news/${news.id}`);
+  };
 
   return (
     <main>
@@ -22,7 +30,7 @@ const Main = observer(() => {
         {latestNews?.state === "pending" && <Skeleton count={18} />}
 
         {latestNews?.state === "fulfilled" && NEWS.length > 0 && (
-          <NewsList news={NEWS} />
+          <NewsList viewNewsDetails={viewNewsDetails} news={NEWS} />
         )}
       </div>
     </main>
